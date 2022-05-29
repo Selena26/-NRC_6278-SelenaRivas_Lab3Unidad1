@@ -42,3 +42,33 @@ class Grafo:
         '''
         for llave in self.m_lista_adyacencia.keys():
             print("nodo", llave, ": ", self.m_lista_adyacencia[llave])
+    def dfs(self, inicio, objetivo, camino = [], visitado = set()):
+        '''Método que imprime el recorrido por dfs
+        Párametros:
+        inicio
+        objetivo
+        camino
+        visitado
+        Excepciones:
+        Evalua-- Si(inicio==objetivo)
+            retorna camino
+            Recorre vecino y peso en la lista de adyacencia
+                Evalua-- Si(vecino no esta en visitado)
+                    Asignamos a resultado que es igual a (vecino, objetivo, camino, visitado)
+                    Evalua-- Si (resultado is not None) -> Si el resultadon o hasido encontrado
+                        devuelve el resultado
+        apila camino
+        retorna None
+        '''
+        camino.append(inicio)
+        visitado.add(inicio)
+        if inicio == objetivo:
+            return camino
+        for (vecino, peso) in self.m_lista_adyacencia[inicio]:
+            if vecino not in visitado:
+                resultado = self.dfs(vecino, objetivo, camino, visitado)
+                if resultado is not None:
+                    return resultado
+        camino.pop()
+        return None
+        
