@@ -7,6 +7,10 @@ class Grafo:
     dirigido:si es dirigido o no dirigido
     Excepciones:
     Evalua --Si (__name__ == "__main__")
+    Crea una instancia de la clase Grafo  
+    Donde el grafo es no dirigido y tiene cinco nodos
+    Agrega los bordes al grafo donde el peso=1
+    Imprime la lista de adyacencia en lo forma nodo n: {(nodo, peso)}
     '''
     def __init__(self, numero_de_nodos, dirigido = True):
         '''Método constructor inicializador de la clase Grafo
@@ -71,4 +75,17 @@ class Grafo:
                     return resultado
         camino.pop()
         return None
-        
+if __name__ == "__main__":
+    g = Grafo(5, dirigido=False)
+
+    g.agregar_borde(0, 1)
+    g.agregar_borde(0, 2)
+    g.agregar_borde(1, 3)
+    g.agregar_borde(2, 3)
+    g.agregar_borde(3, 4)
+    
+    g.imprimir_lista_adyacentet()
+    
+    camino_transversal = []
+    camino_transversal = g.dfs(0, 3)
+    print(f"El camino transversal del nodo 0 a el nodo 3 is: {camino_transversal}")
