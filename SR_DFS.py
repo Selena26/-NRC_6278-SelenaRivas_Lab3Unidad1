@@ -84,8 +84,8 @@ if __name__ == "__main__":
     g.agregar_borde(2, 3)
     g.agregar_borde(3, 4)
     
-    g.imprimir_lista_adyacentet()
-    
+    g.imprimir_lista_adyacente()
+
     camino_transversal = []
     camino_transversal = g.dfs(0, 3)
     print(f"El camino transversal del nodo 0 a el nodo 3 is: {camino_transversal}")
