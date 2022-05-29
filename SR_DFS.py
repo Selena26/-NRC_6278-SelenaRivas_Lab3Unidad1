@@ -5,6 +5,15 @@ class Grafo:
     Atributos:
     numero_de_nodos:número de nodos
     dirigido:si es dirigido o no dirigido
+    Métodos:
+    __init__(self, num_de_nodos, dirigido=True)
+        Método constructor que inicializa la clase grafo
+    agregar_borde(self, nodo1, nodo2, peso=1)
+        Genera los bordes de la lista de adyacencia.
+    Imprimir_lista_adyacencia(self)
+        Método que imprime el grafo generado en la lista de adyacencia
+    dfs(self, inicio, objetivo, camino = [], visitado = set())
+        Método de búsqueda que imprime el recorrido por dfs
     Excepciones:
     Evalua --Si (__name__ == "__main__")
     Crea una instancia de la clase Grafo  
@@ -15,8 +24,8 @@ class Grafo:
     def __init__(self, numero_de_nodos, dirigido = True):
         '''Método constructor inicializador de la clase Grafo
         Parámetros:
-        m_numero_de_nodos--- el número de nodos
-        m_nodos--- rango de nodos
+        m_numero_de_nodos--- el número de nodos. Tipo de dato int
+        m_nodos--- rango de nodos. Tipo de dato int
         m_dirigido--- dirigido o no dirigido (por defecto en verdadero). Dato de tipo boleano
         m_lista_adyacencia--- Lista de adyacencia (Uso de un diccionario para implementar una lista de adyacencia)
         '''
@@ -27,9 +36,9 @@ class Grafo:
     def agregar_borde(self, nodo1, nodo2, peso=1):
         '''Método para agregar bordes al grafo 
         Parámetros:
-        nodo1
-        nodo2
-        peso(1)
+        nodo1: Tipo de dato int
+        nodo2:Tipo de dato int
+        peso(1): Tipo de dato int
         --Agrega nodo2 y el peso a lista de adyacencia en nodo1
         Excepciones
         Evalua: Si (es NO dirigido)
@@ -47,12 +56,12 @@ class Grafo:
         for llave in self.m_lista_adyacencia.keys():
             print("nodo", llave, ": ", self.m_lista_adyacencia[llave])
     def dfs(self, inicio, objetivo, camino = [], visitado = set()):
-        '''Método que imprime el recorrido por dfs
+        '''Método de búsqueda que imprime el recorrido por dfs
         Párametros:
-        inicio
-        objetivo
-        camino
-        visitado
+        inicio: int
+        objetivo: int
+        camino: lista
+        visitado: int
         Excepciones:
         Evalua-- Si(inicio==objetivo)
             retorna camino
