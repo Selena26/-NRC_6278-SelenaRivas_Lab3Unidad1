@@ -6,14 +6,14 @@ class Grafo:
     numero_de_nodos:número de nodos
     dirigido:si es dirigido o no dirigido
     Métodos:
-    __init__(self, num_de_nodos, dirigido=True)
-        Método constructor que inicializa la clase grafo
-    agregar_borde(self, nodo1, nodo2, peso=1)
-        Genera los bordes de la lista de adyacencia.
-    Imprimir_lista_adyacencia(self)
-        Método que imprime el grafo generado en la lista de adyacencia
-    dfs(self, inicio, objetivo, camino = [], visitado = set())
-        Método de búsqueda que imprime el recorrido por dfs
+        __init__(self, num_de_nodos, dirigido=True)
+            Método constructor que inicializa la clase grafo
+        agregar_borde(self, nodo1, nodo2, peso=1)
+            Genera los bordes de la lista de adyacencia.
+        Imprimir_lista_adyacencia(self)
+            Método que imprime el grafo generado en la lista de adyacencia
+        dfs(self, inicio, objetivo, camino = [], visitado = set())
+            Método de búsqueda que imprime el recorrido por dfs
     Excepciones:
     Evalua --Si (__name__ == "__main__")
     Crea una instancia de la clase Grafo  
