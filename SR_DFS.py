@@ -20,3 +20,18 @@ class Grafo:
         self.m_nodos = range(self.m_numero_de_nodos)
         self.m_dirigido = dirigido
         self.m_lista_adyacencia = {nodo: set() for nodo in self.m_nodos}
+    def agregar_borde(self, nodo1, nodo2, peso=1):
+        '''Método para agregar bordes al grafo 
+        Parámetros:
+        nodo1
+        nodo2
+        peso(1)
+        --Agrega nodo2 y el peso a lista de adyacencia en nodo1
+        Excepciones
+        Evalua: Si (es NO dirigido)
+            Agrega nodo1 y el peso a lista de adyacencia en nodo2
+        '''
+        self.m_lista_adyacencia[nodo1].add((nodo2, peso))
+        if not self.m_dirigido:
+            self.m_lista_adyacencia[nodo2].add((nodo1, peso))
+    
